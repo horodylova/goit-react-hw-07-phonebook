@@ -3,7 +3,7 @@ import { ContactListItem, ContactInfo, DeleteButton } from './ContactItem.styled
 import { useDispatch } from 'react-redux';
 import { deleteContactAsync } from 'store/contactActions';
 
-export const ContactItem = React.memo(({ contact }) => {
+export const ContactItem = ({ contact }) => {
   const dispatch = useDispatch();
 
   
@@ -22,5 +22,6 @@ export const ContactItem = React.memo(({ contact }) => {
       </DeleteButton>
     </ContactListItem>
   );
-});
+};
+
 

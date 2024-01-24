@@ -41,9 +41,8 @@ const contactsSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(deleteContactAsync.fulfilled, (state, action) => {
-        state.isLoading = false;
         state.items = state.items.filter(
-          contact => contact.id !== action.payload
+          (contact) => contact.id !== action.payload
         );
       });
   },
