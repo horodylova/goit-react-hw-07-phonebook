@@ -54,12 +54,16 @@ export const fetchContactsFromBackend = async () => {
         method: 'DELETE',
       });
   
+      console.log('Response Status:', response.status);
+  
       if (!response.ok) {
-        throw new Error('Failed to delete contact');
+        console.error('Failed to delete contact');
+
       }
   
-      return true;  
+      return true;
     } catch (error) {
+      console.error('Error:', error);
       throw error;
     }
   };

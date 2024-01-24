@@ -41,8 +41,10 @@ const contactsSlice = createSlice({
         state.error = action.payload;
       })
       .addCase(deleteContactAsync.fulfilled, (state, action) => {
+        const deletedContactId = action.payload;
+        console.log(deletedContactId);
         state.items = state.items.filter(
-          (contact) => contact.id !== action.payload
+          (contact) => contact.id !== deletedContactId
         );
       });
   },
@@ -50,4 +52,5 @@ const contactsSlice = createSlice({
 
 export const { setFilter } = contactsSlice.actions;
 export default contactsSlice.reducer;
+
 

@@ -3,7 +3,7 @@ import { ContactItem } from '../ContactItem/ContactItem';
 import { useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'store/selectors';
 
-export const ContactList = React.memo(() => {
+export const ContactList = () => {
   const visibleContacts = useSelector(selectVisibleContacts);
 
   const sortContacts = (contacts) => {
@@ -34,7 +34,7 @@ export const ContactList = React.memo(() => {
   };
 
   return <div>{renderContacts()}</div>;
-});
+};
 
     
  
