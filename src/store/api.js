@@ -53,15 +53,13 @@ export const fetchContactsFromBackend = async () => {
       const response = await fetch(`${BASE_URL}/contacts/${contactId}`, {
         method: 'DELETE',
       });
-  
-      console.log('Response Status:', response.status);
-  
+    
       if (!response.ok) {
         console.error('Failed to delete contact');
 
       }
   
-      return true;
+      return response;
     } catch (error) {
       console.error('Error:', error);
       throw error;

@@ -42,7 +42,7 @@ const contactsSlice = createSlice({
       })
       .addCase(deleteContactAsync.fulfilled, (state, action) => {
         const deletedContactId = action.payload;
-        console.log(deletedContactId);
+       
         state.items = state.items.filter(
           (contact) => contact.id !== deletedContactId
         );
